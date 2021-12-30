@@ -1,15 +1,17 @@
 $(document).ready(function() {
     $("button").on("click", function (e){
         e.preventDefault();
-
+        //Obtener valor de ID
         let id = $("#formulario").val();
+        //Confirmar y unir URL
         let direccion = `https://www.superheroapi.com/api.php/4564354093614559/${id}`;
+        //consumir API
         $.ajax({
             type:"GET",
             url: direccion,
             dataType:"json",
             success: function(datosApi) {
-                console.log(datosApi, datosApi.image);;
+                console.log(datosApi, datosApi.image.url);;
                 console.log(datosApi.name, datosApi.connections, datosApi.work.occupation, datosApi.appearance.weight, datosApi.biography);
                 $('#resultado').html(`<h3> El Super encontrado es: </h3>`);
                 $("#avatar").html(`<img src="${datosApi.image.url}">`);
@@ -24,12 +26,6 @@ $(document).ready(function() {
                 Alias:${datosApi.biography.aliases}<br>
                             
                 `);
-                $("#conexiones").html(datosApi.connections);
-                $("#ocupacion").html;
-                $("#aparicion").html(datosApi.biography);
-                $("#peso").html(datosApi.appearance);
-                $("#alianzas").html(datosApi.connections);
-                
             },
             error: function(error) {
                     console.log("Error")
