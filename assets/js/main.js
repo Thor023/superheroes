@@ -1,7 +1,9 @@
 $(document).ready(function() {
-    $("button").on("click", function (){
+    $("button").on("click", function (e){
+        e.preventDefault();
+
         let id = $("#formulario").val();
-        let direccion = `https://www.superheroapi.com/api/4564354093614559/${id}`;
+        let direccion = `https://www.superheroapi.com/api.php/4564354093614559/${id}`;
         $.ajax({
             type:"GET",
             url: direccion,
@@ -9,10 +11,10 @@ $(document).ready(function() {
             success: function(datosApi) {
                 console.log(datosApi, datosApi.image);;
                 console.log(datosApi.name, datosApi.connections, datosApi.work.occupation, datosApi.appearance.weight, datosApi.biography);
-                $('#resultado').append(`<h3> El Super encontrado es: </h3>`);
+                $('#resultado').html(`<h3> El Super encontrado es: </h3>`);
                 $("#avatar").html(`<img src="${datosApi.image.url}">`);
                 $(".nombre").html(datosApi.name);
-                $('#infosuper').append(`
+                $('#infosuper').html(`
                 Nombre: ${datosApi.name} <br>
                 Conexiones: ${datosApi.connections['group-affiliation']} <br>
                 Parientes: ${datosApi.connections.relatives}<br>
