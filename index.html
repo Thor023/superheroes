@@ -7,12 +7,13 @@
     <title>SuperHeroes</title>
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!--Canvas-->
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
     <!--Mi JS-->
     <script src="./assets/js/main.js"></script>
     <!--Mi CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">    
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -41,20 +42,22 @@
             <div class="input-prepend">
                 <button class="btn btn-primary" type="button" id="button-addon1">Busca tu Super!</button>
             </div>
-            <input type="text" id="formulario" class="form" placeholder="Ingresa el numero del superheroe a buscar" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            <input type="text" id="formulario" class="form-group" placeholder="Ingresa un numero del 1 al 731" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            <p>puedes consultar el listado aqui </p>
+            <a href="https://superheroapi.com/ids.html" target="_blank">
+                <button type="button" class="btn btn-outline-info">Listado</button>
+            </a>
         </div>
     </div>
     <div id="resultado"class="text-center">
-        
-
     </div>
     <div class="container-fluid text-center">
         <div class="row">
             <div class="col">
                 <div class="card mb-3">
                     <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img id="avatar" src="..." alt="foto" class="image-fluid">
+                        <div class="fotosuper col-md-4">
+                            <img id="avatar" src="" alt="foto"  >
                         </div>
                         <div class="col-md-8">
                             <div class="card-body text-justify">
@@ -64,7 +67,10 @@
                         </div>
                     </div>
                 </div>
-    </div>  
+    </div>
+    <div id="grafico" class=" container-fluid">
+
+    </div>
     <!--Bundle JS Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     
